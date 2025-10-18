@@ -1,0 +1,38 @@
+{
+  "name": "primevue-mcp",
+  "version": "1.0.0",
+  "description": "Unofficial MCP for PrimeVue",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx src/server.ts",
+    "start": "node --loader tsx src/server.ts",
+    "extract:api": "tsx scripts/extract_api.ts",
+    "extract:logic": "tsx scripts/extract_logic.ts",
+    "extract:tokens": "tsx scripts/extract_tokens.ts",
+    "extract:docs": "tsx scripts/extract_docs.ts",
+    "extract:build": "tsx scripts/merge_datasets.ts",
+    "extract:all": "npm run extract:api && npm run extract:logic && npm run extract:tokens && npm run extract:docs && npm run extract:build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.20.1",
+    "cheerio": "^1.1.2",
+    "express": "^5.1.0",
+    "fs-extra": "^11.3.2",
+    "globby": "^15.0.0",
+    "node-fetch": "^3.3.2",
+    "primeicons": "^7.0.0",
+    "primevue": "^4.4.1",
+    "vue": "^3.5.22"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^24.8.1",
+    "@vue/compiler-sfc": "^3.5.22",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}

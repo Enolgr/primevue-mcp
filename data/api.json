@@ -1,0 +1,2648 @@
+{
+  "accordion": {
+    "props": {
+      "value": "string | string[] | number | number[] | null | undefined",
+      "multiple": "boolean | undefined",
+      "activeIndex": "number | number[] | null | undefined",
+      "lazy": "boolean | undefined",
+      "expandIcon": "string | undefined",
+      "collapseIcon": "string | undefined",
+      "tabindex": "number | undefined",
+      "selectOnFocus": "boolean | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<AccordionPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:value'": "void",
+      "'update:activeIndex'": "void",
+      "'tab-open'": "void",
+      "'tab-close'": "void",
+      "'tab-click'": "void"
+    },
+    "slots": {}
+  },
+  "accordioncontent": {
+    "props": {
+      "as": "string | Component | undefined",
+      "asChild": "boolean | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<AccordionContentPassThroughOptions>",
+      "ptOptions": "PassThroughOptions"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "accordionheader": {
+    "props": {
+      "as": "string | Component | undefined",
+      "asChild": "boolean | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<AccordionHeaderPassThroughOptions>",
+      "ptOptions": "PassThroughOptions"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "accordionpanel": {
+    "props": {
+      "value": "string | number | undefined",
+      "disabled": "boolean | undefined",
+      "as": "string | Component | undefined",
+      "asChild": "boolean | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<AccordionPanelPassThroughOptions>",
+      "ptOptions": "PassThroughOptions"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "accordiontab": {
+    "props": {
+      "header": "string | undefined",
+      "headerStyle": "any",
+      "headerClass": "any",
+      "headerProps": "HTMLAttributes | undefined",
+      "headerActionProps": "AnchorHTMLAttributes | undefined",
+      "contentStyle": "any",
+      "contentClass": "any",
+      "contentProps": "HTMLAttributes | undefined",
+      "disabled": "boolean | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<AccordionTabPassThroughOptions>",
+      "ptOptions": "PassThroughOptions"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "animateonscroll": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "autocomplete": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "avatar": {
+    "props": {
+      "label": "string | undefined",
+      "icon": "string | undefined",
+      "image": "string | undefined",
+      "size": "HintedString<'normal' | 'large' | 'xlarge'> | undefined",
+      "shape": "HintedString<'square' | 'circle'> | undefined",
+      "ariaLabel": "string | undefined",
+      "ariaLabelledby": "string | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<AvatarPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "error": "void"
+    },
+    "slots": {}
+  },
+  "avatargroup": {
+    "props": {
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<AvatarGroupPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "badge": {
+    "props": {
+      "value": "string | number",
+      "severity": "HintedString<'secondary' | 'info' | 'success' | 'warn' | 'danger' | 'contrast'> | null | undefined",
+      "size": "HintedString<'small' | 'large' | 'xlarge'> | null | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<BadgePassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "badgedirective": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "blockui": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "breadcrumb": {
+    "props": {
+      "model": "MenuItem[] | undefined",
+      "home": "MenuItem | undefined",
+      "ariaLabel": "string | undefined",
+      "ariaLabelledby": "string | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<BreadcrumbPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "button": {
+    "props": {
+      "style": "any",
+      "class": "any",
+      "label": "string | undefined",
+      "icon": "string | undefined",
+      "iconPos": "HintedString<'left' | 'right' | 'top' | 'bottom'> | undefined",
+      "iconClass": "string | object | undefined",
+      "badge": "string | undefined",
+      "badgeClass": "string | object | undefined",
+      "badgeSeverity": "HintedString<'secondary' | 'info' | 'success' | 'warn' | 'danger' | 'contrast'> | null | undefined",
+      "loading": "boolean | undefined",
+      "loadingIcon": "string | undefined",
+      "as": "string | Component | undefined",
+      "asChild": "boolean | undefined",
+      "link": "boolean | undefined",
+      "severity": "HintedString<'secondary' | 'success' | 'info' | 'warn' | 'help' | 'danger' | 'contrast'> | undefined",
+      "raised": "boolean | undefined",
+      "rounded": "boolean | undefined",
+      "text": "boolean | undefined",
+      "outlined": "boolean | undefined",
+      "size": "HintedString<'small' | 'large'> | undefined",
+      "variant": "HintedString<'outlined' | 'text' | 'link'> | undefined",
+      "plain": "boolean | undefined",
+      "fluid": "boolean | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<ButtonPassThroughOptions<any>>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "buttongroup": {
+    "props": {
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<ButtonGroupPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "calendar": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "card": {
+    "props": {
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<CardPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "carousel": {
+    "props": {
+      "value": "any | undefined",
+      "page": "number | undefined",
+      "numVisible": "number | undefined",
+      "numScroll": "number | undefined",
+      "responsiveOptions": "CarouselResponsiveOptions[] | undefined",
+      "orientation": "'horizontal' | 'vertical' | undefined",
+      "verticalViewPortHeight": "string | undefined",
+      "containerClass": "any",
+      "contentClass": "any",
+      "indicatorsContentClass": "any",
+      "circular": "boolean | undefined",
+      "autoplayInterval": "number | undefined",
+      "showNavigators": "boolean | undefined",
+      "showIndicators": "boolean | undefined",
+      "prevButtonProps": "object | undefined",
+      "nextButtonProps": "object | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<CarouselPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:page'": "void"
+    },
+    "slots": {}
+  },
+  "cascadeselect": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "chart": {
+    "props": {
+      "type": "string | undefined",
+      "data": "object | undefined",
+      "options": "object | undefined",
+      "plugins": "any[]",
+      "width": "number | undefined",
+      "height": "number | undefined",
+      "canvasProps": "CanvasHTMLAttributes | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<ChartPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "select": "void",
+      "loaded": "void"
+    },
+    "slots": {}
+  },
+  "checkbox": {
+    "props": {
+      "value": "any",
+      "modelValue": "any",
+      "defaultValue": "any",
+      "name": "string | undefined",
+      "binary": "boolean",
+      "indeterminate": "boolean | undefined",
+      "size": "'small' | 'large' | undefined",
+      "invalid": "boolean | undefined",
+      "disabled": "boolean | undefined",
+      "variant": "HintedString<'outlined' | 'filled'> | undefined | null",
+      "readonly": "boolean | undefined",
+      "required": "boolean | undefined",
+      "tabindex": "number | undefined",
+      "trueValue": "any",
+      "falseValue": "any",
+      "inputId": "string | undefined",
+      "inputClass": "object | undefined",
+      "inputStyle": "string | object | undefined",
+      "ariaLabelledby": "string | undefined",
+      "ariaLabel": "string | undefined",
+      "formControl": "Record<string, any> | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<CheckboxPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:modelValue'": "void",
+      "'update:indeterminate'": "void",
+      "'value-change'": "void",
+      "change": "void",
+      "focus": "void",
+      "blur": "void"
+    },
+    "slots": {}
+  },
+  "checkboxgroup": {
+    "props": {
+      "modelValue": "any",
+      "defaultValue": "any",
+      "name": "string | undefined",
+      "invalid": "boolean | undefined",
+      "formControl": "any",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<CheckboxGroupPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:modelValue'": "void",
+      "'value-change'": "void"
+    },
+    "slots": {
+      "default": "() => VNode[]"
+    }
+  },
+  "chip": {
+    "props": {
+      "label": "string | number",
+      "icon": "string",
+      "image": "string",
+      "removable": "boolean",
+      "removeIcon": "string",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<ChipPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "remove": "void"
+    },
+    "slots": {}
+  },
+  "chips": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "colorpicker": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "column": {
+    "props": {
+      "columnKey": "string | undefined",
+      "field": "string | ((item: any) => string) | undefined",
+      "sortField": "string | ((item: any) => string) | undefined",
+      "filterField": "string | ((item: any) => string) | undefined",
+      "dataType": "string | undefined",
+      "sortable": "boolean | undefined",
+      "header": "string | undefined",
+      "footer": "string | undefined",
+      "style": "any",
+      "class": "any",
+      "headerStyle": "any",
+      "headerClass": "any",
+      "bodyStyle": "any",
+      "bodyClass": "any",
+      "footerStyle": "any",
+      "footerClass": "any",
+      "showFilterMenu": "boolean | undefined",
+      "showFilterOperator": "boolean | undefined",
+      "showClearButton": "boolean | undefined",
+      "showApplyButton": "boolean | undefined",
+      "showFilterMatchModes": "boolean | undefined",
+      "showAddButton": "boolean | undefined",
+      "filterMatchModeOptions": "ColumnFilterMatchModeOptions[]",
+      "maxConstraints": "number | undefined",
+      "excludeGlobalFilter": "boolean | undefined",
+      "filterHeaderStyle": "any",
+      "filterHeaderClass": "any",
+      "filterMenuStyle": "any",
+      "filterMenuClass": "any",
+      "selectionMode": "HintedString<'single' | 'multiple'> | undefined",
+      "expander": "boolean | undefined",
+      "colspan": "number | undefined",
+      "rowspan": "number | undefined",
+      "rowReorder": "boolean | undefined",
+      "rowReorderIcon": "string | undefined",
+      "reorderableColumn": "boolean | undefined",
+      "rowEditor": "boolean | undefined",
+      "frozen": "boolean | undefined",
+      "alignFrozen": "HintedString<'left' | 'right'> | undefined",
+      "exportable": "boolean | undefined",
+      "exportHeader": "string | undefined",
+      "exportFooter": "string | undefined",
+      "filterMatchMode": "string | undefined",
+      "hidden": "boolean | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<ColumnPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "columngroup": {
+    "props": {
+      "type": "HintedString<'header' | 'footer'> | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<ColumnGroupPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "config": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "confirmationoptions": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "confirmationservice": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "confirmdialog": {
+    "props": {
+      "group": "string | undefined",
+      "breakpoints": "ConfirmDialogBreakpoints",
+      "draggable": "boolean | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<ConfirmDialogPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "confirmpopup": {
+    "props": {
+      "group": "string",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<ConfirmPopupPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "contextmenu": {
+    "props": {
+      "model": "MenuItem[] | undefined",
+      "breakpoint": "string | undefined",
+      "global": "boolean | undefined",
+      "appendTo": "HintedString<'body' | 'self'> | undefined | HTMLElement",
+      "autoZIndex": "boolean | undefined",
+      "baseZIndex": "number | undefined",
+      "tabindex": "number | string | undefined",
+      "ariaLabel": "string | undefined",
+      "ariaLabelledby": "string | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<ContextMenuPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "focus": "void",
+      "blur": "void",
+      "'before-show'": "void",
+      "'before-hide'": "void",
+      "show": "void",
+      "hide": "void"
+    },
+    "slots": {}
+  },
+  "datatable": {
+    "props": {
+      "value": "readonly T[] | undefined | null",
+      "dataKey": "keyof T | ((item: NoInfer<T>) => string) | undefined",
+      "rows": "number | undefined",
+      "first": "number | undefined",
+      "totalRecords": "number | undefined",
+      "paginator": "boolean | undefined",
+      "paginatorPosition": "HintedString<'top' | 'bottom' | 'both'> | undefined",
+      "alwaysShowPaginator": "boolean | undefined",
+      "paginatorTemplate": "any | string",
+      "pageLinkSize": "number | undefined",
+      "rowsPerPageOptions": "number[] | undefined",
+      "currentPageReportTemplate": "string | undefined",
+      "lazy": "boolean | undefined",
+      "loading": "boolean | undefined",
+      "loadingIcon": "string | undefined",
+      "sortField": "keyof T | ((item: NoInfer<T>) => string) | undefined",
+      "sortOrder": "number | undefined",
+      "nullSortOrder": "number",
+      "defaultSortOrder": "number | undefined",
+      "multiSortMeta": "DataTableSortMeta[] | undefined",
+      "sortMode": "HintedString<'single' | 'multiple'> | undefined",
+      "removableSort": "boolean | undefined",
+      "filters": "DataTableFilterMeta",
+      "filterDisplay": "HintedString<'menu' | 'row'> | undefined",
+      "globalFilterFields": "(keyof T | ((data: NoInfer<T>) => string))[] | undefined",
+      "filterLocale": "string | undefined",
+      "selection": "NoInfer<T>[] | NoInfer<T> | undefined",
+      "selectionMode": "HintedString<'single' | 'multiple'> | undefined",
+      "compareSelectionBy": "HintedString<'equals' | 'deepEquals'> | undefined",
+      "metaKeySelection": "boolean | undefined",
+      "contextMenu": "boolean | undefined",
+      "contextMenuSelection": "NoInfer<T> | NoInfer<T>[] | undefined",
+      "selectAll": "Nullable<boolean>",
+      "rowHover": "boolean | undefined",
+      "csvSeparator": "string | undefined",
+      "exportFilename": "string | undefined",
+      "exportFunction": "(options: DataTableExportFunctionOptions) => any",
+      "resizableColumns": "boolean | undefined",
+      "columnResizeMode": "HintedString<'fit' | 'expand'> | undefined",
+      "reorderableColumns": "boolean | undefined",
+      "expandedRows": "NoInfer<T>[] | DataTableExpandedRows | null",
+      "expandedRowIcon": "string | undefined",
+      "collapsedRowIcon": "string | undefined",
+      "rowGroupMode": "HintedString<'subheader' | 'rowspan'> | undefined",
+      "groupRowsBy": "((field: NoInfer<T>) => object) | (keyof T)[] | keyof T | undefined",
+      "expandableRowGroups": "boolean | undefined",
+      "expandedRowGroups": "NoInfer<T>[] | DataTableExpandedRows",
+      "stateStorage": "HintedString<'session' | 'local'> | undefined",
+      "stateKey": "string | undefined",
+      "editMode": "HintedString<'cell' | 'row'> | undefined",
+      "editingRows": "NoInfer<T>[] | DataTableEditingRows",
+      "rowClass": "(data: NoInfer<T>) => string | object | undefined",
+      "rowStyle": "(data: NoInfer<T>) => object | object[] | undefined",
+      "scrollable": "boolean | undefined",
+      "scrollHeight": "HintedString<'flex'> | undefined",
+      "virtualScrollerOptions": "VirtualScrollerProps",
+      "frozenValue": "NoInfer<T>[] | undefined | null",
+      "breakpoint": "string | undefined",
+      "showHeaders": "boolean | undefined",
+      "showGridlines": "boolean | undefined",
+      "stripedRows": "boolean | undefined",
+      "highlightOnSelect": "boolean | undefined",
+      "size": "HintedString<'small' | 'large'> | undefined",
+      "tableStyle": "string | object | undefined",
+      "tableClass": "string | object | undefined",
+      "tableProps": "TableHTMLAttributes | undefined",
+      "filterInputProps": "InputHTMLAttributes | undefined",
+      "filterButtonProps": "Partial<DataTableFilterButtonPropsOptions> | undefined",
+      "editButtonProps": "DataTableEditButtonPropsOptions | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<DataTablePassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:first'": "void",
+      "'update:rows'": "void",
+      "'update:sortField'": "void",
+      "'update:sortOrder'": "void",
+      "'update:multiSortMeta'": "void",
+      "'update:selection'": "void",
+      "'update:contextMenuSelection'": "void",
+      "'update:expandedRows'": "void",
+      "'update:expandedRowGroups'": "void",
+      "'update:filters'": "void",
+      "'update:editingRows'": "void",
+      "page": "void",
+      "sort": "void",
+      "filter": "void",
+      "'value-change'": "void",
+      "'row-click'": "void",
+      "'row-dblclick'": "void",
+      "'row-contextmenu'": "void",
+      "'row-select'": "void",
+      "'row-select-all'": "void",
+      "'row-unselect-all'": "void",
+      "'row-unselect'": "void",
+      "'select-all-change'": "void",
+      "'column-resize-end'": "void",
+      "'column-reorder'": "void",
+      "'row-reorder'": "void",
+      "'row-expand'": "void",
+      "'row-collapse'": "void",
+      "'rowgroup-expand'": "void",
+      "'rowgroup-collapse'": "void",
+      "'cell-edit-init'": "void",
+      "'cell-edit-complete'": "void",
+      "'cell-edit-cancel'": "void",
+      "'row-edit-init'": "void",
+      "'row-edit-save'": "void",
+      "'row-edit-cancel'": "void",
+      "'state-restore'": "void",
+      "'state-save'": "void"
+    },
+    "slots": {}
+  },
+  "dataview": {
+    "props": {
+      "value": "T[] | null | undefined",
+      "layout": "HintedString<'list' | 'grid'> | undefined",
+      "rows": "number | undefined",
+      "first": "number | undefined",
+      "totalRecords": "number | undefined",
+      "paginator": "boolean | undefined",
+      "paginatorPosition": "HintedString<'top' | 'bottom' | 'both'> | undefined",
+      "alwaysShowPaginator": "boolean | undefined",
+      "paginatorTemplate": "string | undefined",
+      "pageLinkSize": "number | undefined",
+      "rowsPerPageOptions": "number[] | undefined",
+      "currentPageReportTemplate": "string | undefined",
+      "sortField": "string | ((item: any) => string) | null | undefined",
+      "sortOrder": "number | null | undefined",
+      "lazy": "boolean | undefined",
+      "dataKey": "string | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<DataViewPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:first'": "void",
+      "'update:rows'": "void",
+      "page": "void"
+    },
+    "slots": {}
+  },
+  "datepicker": {
+    "props": {
+      "modelValue": "Date | Array<Date> | Array<Date | null> | undefined | null",
+      "defaultValue": "Date | Array<Date> | Array<Date | null> | undefined | null",
+      "name": "string | undefined",
+      "selectionMode": "HintedString<'single' | 'multiple' | 'range'> | undefined",
+      "dateFormat": "string | undefined",
+      "updateModelType": "HintedString<'date' | 'string'> | undefined",
+      "inline": "boolean | undefined",
+      "showOtherMonths": "boolean | undefined",
+      "selectOtherMonths": "boolean | undefined",
+      "showIcon": "boolean | undefined",
+      "iconDisplay": "HintedString<'button' | 'input'> | undefined",
+      "icon": "string | undefined",
+      "prevIcon": "string | undefined",
+      "nextIcon": "string | undefined",
+      "incrementIcon": "string | undefined",
+      "decrementIcon": "string | undefined",
+      "numberOfMonths": "number | undefined",
+      "responsiveOptions": "DatePickerResponsiveOptions[]",
+      "breakpoint": "string | undefined",
+      "view": "HintedString<'date' | 'month' | 'year'> | undefined",
+      "minDate": "Date | undefined",
+      "maxDate": "Date | undefined",
+      "disabledDates": "Date[] | undefined",
+      "disabledDays": "number[] | undefined",
+      "maxDateCount": "number | undefined",
+      "showOnFocus": "boolean | undefined",
+      "autoZIndex": "boolean | undefined",
+      "baseZIndex": "number | undefined",
+      "showButtonBar": "boolean | undefined",
+      "shortYearCutoff": "string | undefined",
+      "showTime": "boolean | undefined",
+      "timeOnly": "boolean | undefined",
+      "hourFormat": "HintedString<'12' | '24'> | undefined",
+      "stepHour": "number | undefined",
+      "stepMinute": "number | undefined",
+      "stepSecond": "number | undefined",
+      "showSeconds": "boolean | undefined",
+      "hideOnDateTimeSelect": "boolean | undefined",
+      "hideOnRangeSelection": "boolean | undefined",
+      "timeSeparator": "string | undefined",
+      "showWeek": "boolean | undefined",
+      "manualInput": "boolean | undefined",
+      "showClear": "boolean | undefined",
+      "size": "HintedString<'small' | 'large'> | undefined",
+      "invalid": "boolean | undefined",
+      "disabled": "boolean | undefined",
+      "variant": "HintedString<'outlined' | 'filled'> | undefined | null",
+      "readonly": "boolean | undefined",
+      "placeholder": "string | undefined",
+      "required": "boolean | undefined",
+      "appendTo": "HintedString<'body' | 'self'> | undefined | HTMLElement",
+      "inputId": "string | undefined",
+      "inputStyle": "object | undefined",
+      "inputClass": "string | object | undefined",
+      "panelStyle": "object | undefined",
+      "panelClass": "string | object | undefined",
+      "todayButtonProps": "object | undefined",
+      "clearButtonProps": "object | undefined",
+      "navigatorButtonProps": "object | undefined",
+      "timepickerButtonProps": "object | undefined",
+      "fluid": "boolean | undefined",
+      "ariaLabelledby": "string | undefined",
+      "ariaLabel": "string | undefined",
+      "formControl": "Record<string, any> | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<DatePickerPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:modelValue'": "void",
+      "'value-change'": "void",
+      "input": "void",
+      "'date-select'": "void",
+      "show": "void",
+      "hide": "void",
+      "'today-click'": "void",
+      "'clear-click'": "void",
+      "'month-change'": "void",
+      "'year-change'": "void",
+      "focus": "void",
+      "blur": "void",
+      "keydown": "void"
+    },
+    "slots": {}
+  },
+  "deferredcontent": {
+    "props": {
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<DeferredContentPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "load": "void"
+    },
+    "slots": {}
+  },
+  "dialog": {
+    "props": {
+      "header": "string | undefined",
+      "footer": "string | undefined",
+      "visible": "boolean | undefined",
+      "modal": "boolean | undefined",
+      "contentStyle": "any",
+      "contentClass": "any",
+      "contentProps": "HTMLAttributes | undefined",
+      "closable": "boolean | undefined",
+      "dismissableMask": "boolean | undefined",
+      "closeOnEscape": "boolean | undefined",
+      "showHeader": "boolean | undefined",
+      "blockScroll": "boolean | undefined",
+      "baseZIndex": "number | undefined",
+      "autoZIndex": "boolean | undefined",
+      "position": "HintedString<'center' | 'top' | 'bottom' | 'left' | 'right' | 'topleft' | 'topright' | 'bottomleft' | 'bottomright'> | undefined",
+      "maximizable": "boolean | undefined",
+      "breakpoints": "DialogBreakpoints",
+      "draggable": "boolean | undefined",
+      "keepInViewport": "boolean | undefined",
+      "minX": "number | undefined",
+      "minY": "number | undefined",
+      "appendTo": "HintedString<'body' | 'self'> | undefined | HTMLElement",
+      "style": "any",
+      "closeIcon": "string | undefined",
+      "maximizeIcon": "string | undefined",
+      "minimizeIcon": "string | undefined",
+      "closeButtonProps": "object | undefined",
+      "maximizeButtonProps": "object | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<DialogPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:visible'": "void",
+      "hide": "void",
+      "'after-hide'": "void",
+      "show": "void",
+      "maximize": "void",
+      "unmaximize": "void",
+      "dragstart": "void",
+      "dragend": "void"
+    },
+    "slots": {}
+  },
+  "dialogservice": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "divider": {
+    "props": {
+      "align": "HintedString<'left' | 'center' | 'right' | 'top' | 'center' | 'bottom'> | undefined",
+      "layout": "HintedString<'horizontal' | 'vertical'> | undefined",
+      "type": "HintedString<'solid' | 'dashed' | 'dotted'> | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<DividerPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "dock": {
+    "props": {
+      "model": "MenuItem[] | undefined",
+      "position": "HintedString<'bottom' | 'top' | 'left' | 'right'> | undefined",
+      "class": "any",
+      "style": "any",
+      "breakpoint": "string | undefined",
+      "tooltipOptions": "DockTooltipOptions",
+      "menuId": "string | undefined",
+      "tabindex": "number | string | undefined",
+      "ariaLabelledby": "string | undefined",
+      "ariaLabel": "string | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<DockPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "focus": "void",
+      "blur": "void"
+    },
+    "slots": {}
+  },
+  "drawer": {
+    "props": {
+      "visible": "boolean | undefined",
+      "position": "HintedString<'left' | 'right' | 'top' | 'bottom' | 'full'> | undefined",
+      "header": "string | undefined",
+      "baseZIndex": "number | undefined",
+      "autoZIndex": "boolean | undefined",
+      "dismissable": "boolean | undefined",
+      "showCloseIcon": "boolean | undefined",
+      "closeButtonProps": "object | undefined",
+      "closeIcon": "string | undefined",
+      "modal": "boolean | undefined",
+      "blockScroll": "boolean | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<DrawerPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean",
+      "closeOnEscape": "boolean | undefined"
+    },
+    "emits": {
+      "'update:visible'": "void",
+      "show": "void",
+      "'before-hide'": "void",
+      "hide": "void",
+      "'after-hide'": "void",
+      "'after-show'": "void"
+    },
+    "slots": {}
+  },
+  "dropdown": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "dynamicdialog": {
+    "props": {
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "dynamicdialogoptions": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "editor": {
+    "props": {
+      "modelValue": "string | undefined",
+      "defaultValue": "any",
+      "name": "string | undefined",
+      "placeholder": "string | undefined",
+      "readonly": "boolean | undefined",
+      "invalid": "boolean | undefined",
+      "formats": "any[]",
+      "editorStyle": "any",
+      "modules": "any",
+      "formControl": "Record<string, any> | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<EditorPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:modelValue'": "void",
+      "'value-change'": "void",
+      "'text-change'": "void",
+      "'selection-change'": "void",
+      "load": "void"
+    },
+    "slots": {
+      "toolbar": "() => VNode[]"
+    }
+  },
+  "fieldset": {
+    "props": {
+      "legend": "string | undefined",
+      "toggleable": "boolean | undefined",
+      "collapsed": "boolean | undefined",
+      "toggleButtonProps": "AnchorHTMLAttributes | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<FieldsetPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:collapsed'": "void",
+      "toggle": "void"
+    },
+    "slots": {
+      "default": "() => VNode[]"
+    }
+  },
+  "fileupload": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "floatlabel": {
+    "props": {
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<FloatLabelPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean",
+      "variant": "HintedString<'over' | 'in' | 'on'> | undefined"
+    },
+    "emits": {},
+    "slots": {
+      "default": "() => VNode[]"
+    }
+  },
+  "fluid": {
+    "props": {
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<FluidPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {
+      "default": "() => VNode[]"
+    }
+  },
+  "focustrap": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "galleria": {
+    "props": {
+      "id": "string | undefined",
+      "value": "any[]",
+      "activeIndex": "number | undefined",
+      "fullScreen": "boolean | undefined",
+      "visible": "boolean | undefined",
+      "numVisible": "number | undefined",
+      "responsiveOptions": "GalleriaResponsiveOptions[]",
+      "showItemNavigators": "boolean | undefined",
+      "showThumbnailNavigators": "boolean | undefined",
+      "showItemNavigatorsOnHover": "boolean | undefined",
+      "changeItemOnIndicatorHover": "boolean | undefined",
+      "circular": "boolean | undefined",
+      "autoPlay": "boolean | undefined",
+      "transitionInterval": "number | undefined",
+      "showThumbnails": "boolean | undefined",
+      "thumbnailsPosition": "HintedString<'bottom' | 'top' | 'left' | 'right'> | undefined",
+      "verticalThumbnailViewPortHeight": "string | undefined",
+      "showIndicators": "boolean | undefined",
+      "showIndicatorsOnItem": "boolean | undefined",
+      "indicatorsPosition": "HintedString<'bottom' | 'top' | 'left' | 'right'> | undefined",
+      "baseZIndex": "number | undefined",
+      "maskClass": "string | undefined",
+      "containerStyle": "any | undefined",
+      "containerClass": "any | undefined",
+      "containerProps": "HTMLAttributes | undefined",
+      "prevButtonProps": "ButtonHTMLAttributes | undefined",
+      "nextButtonProps": "ButtonHTMLAttributes | undefined",
+      "ariaLabel": "string | undefined",
+      "ariaRoledescription": "string | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<GalleriaPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:activeIndex'": "void",
+      "'update:visible'": "void"
+    },
+    "slots": {}
+  },
+  "iconfield": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "iftalabel": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "image": {
+    "props": {
+      "src": "string | undefined",
+      "preview": "boolean | undefined",
+      "imageStyle": "any",
+      "imageClass": "any",
+      "indicatorIcon": "string | undefined",
+      "previewIcon": "string | undefined",
+      "zoomInDisabled": "boolean | undefined",
+      "zoomOutDisabled": "boolean | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<ImagePassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "show": "void",
+      "hide": "void",
+      "error": "void"
+    },
+    "slots": {}
+  },
+  "imagecompare": {
+    "props": {
+      "tabindex": "number | undefined",
+      "ariaLabel": "string | undefined",
+      "ariaLabelledby": "string | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<ImageComparePassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "inlinemessage": {
+    "props": {
+      "severity": "HintedString<'success' | 'info' | 'warn' | 'error' | 'secondary' | 'contrast'> | undefined",
+      "icon": "string | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<InlineMessagePassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "inplace": {
+    "props": {
+      "active": "boolean | undefined",
+      "disabled": "boolean | undefined",
+      "displayProps": "HTMLAttributes | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<InplacePassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:active'": "void",
+      "open": "void",
+      "close": "void"
+    },
+    "slots": {}
+  },
+  "inputchips": {
+    "props": {
+      "modelValue": "any[]",
+      "max": "number | undefined",
+      "addOnBlur": "boolean | undefined",
+      "allowDuplicate": "boolean | undefined",
+      "separator": "string | any",
+      "inputId": "string | undefined",
+      "inputClass": "string | object | undefined",
+      "inputStyle": "object | undefined",
+      "inputProps": "InputHTMLAttributes | undefined",
+      "removeTokenIcon": "string | undefined",
+      "chipIcon": "string | undefined",
+      "invalid": "boolean | undefined",
+      "disabled": "boolean | undefined",
+      "variant": "HintedString<'outlined' | 'filled'> | undefined",
+      "placeholder": "string | undefined",
+      "ariaLabelledby": "string | undefined",
+      "ariaLabel": "string | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<InputChipsPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:modelValue'": "void",
+      "add": "void",
+      "remove": "void"
+    },
+    "slots": {}
+  },
+  "inputgroup": {
+    "props": {
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<InputGroupPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "inputgroupaddon": {
+    "props": {
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<InputGroupAddonPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "inputicon": {
+    "props": {
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<InputIconPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "inputmask": {
+    "props": {
+      "modelValue": "string | undefined | null",
+      "defaultValue": "string | undefined | null",
+      "slotChar": "string | undefined",
+      "mask": "string | undefined",
+      "id": "string | undefined",
+      "class": "string | object | undefined",
+      "placeholder": "string | undefined",
+      "autoClear": "boolean | undefined",
+      "unmask": "boolean | undefined",
+      "readonly": "boolean | undefined",
+      "invalid": "boolean | undefined",
+      "name": "string | undefined",
+      "size": "HintedString<'small' | 'large'> | undefined",
+      "variant": "HintedString<'outlined' | 'filled'> | undefined | null",
+      "fluid": "boolean | undefined",
+      "disabled": "boolean | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<InputMaskPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:modelValue'": "void",
+      "'value-change'": "void",
+      "focus": "void",
+      "blur": "void",
+      "keydown": "void",
+      "keypress": "(event: Event) => void",
+      "paste": "(event: Event) => void",
+      "complete": "(event: Event) => void"
+    },
+    "slots": {}
+  },
+  "inputnumber": {
+    "props": {
+      "modelValue": "Nullable<number>",
+      "defaultValue": "Nullable<number>",
+      "name": "string | undefined",
+      "format": "boolean | undefined",
+      "showButtons": "boolean | undefined",
+      "buttonLayout": "HintedString<'stacked' | 'horizontal' | 'vertical'> | undefined",
+      "incrementButtonClass": "string | undefined",
+      "decrementButtonClass": "string | undefined",
+      "incrementButtonIcon": "string | undefined",
+      "incrementIcon": "string | undefined",
+      "decrementButtonIcon": "string | undefined",
+      "decrementIcon": "string | undefined",
+      "locale": "string | undefined",
+      "localeMatcher": "HintedString<'lookup' | 'best fit'> | undefined",
+      "mode": "HintedString<'decimal' | 'currency'> | undefined",
+      "prefix": "string | undefined",
+      "suffix": "string | undefined",
+      "currency": "string | undefined",
+      "currencyDisplay": "string | undefined",
+      "useGrouping": "boolean | undefined",
+      "minFractionDigits": "number | undefined",
+      "maxFractionDigits": "number | undefined",
+      "roundingMode": "RoundingMode",
+      "min": "number | undefined",
+      "max": "number | undefined",
+      "step": "number | undefined",
+      "allowEmpty": "boolean | undefined",
+      "highlightOnFocus": "boolean | undefined",
+      "showClear": "boolean | undefined",
+      "size": "HintedString<'small' | 'large'> | undefined",
+      "invalid": "boolean | undefined",
+      "disabled": "boolean | undefined",
+      "variant": "HintedString<'outlined' | 'filled'> | undefined | null",
+      "readonly": "boolean | undefined",
+      "placeholder": "string | undefined",
+      "fluid": "boolean | undefined",
+      "inputId": "string | undefined",
+      "inputClass": "string | object | undefined",
+      "inputStyle": "object | undefined",
+      "ariaLabelledby": "string | undefined",
+      "ariaLabel": "string | undefined",
+      "formControl": "Record<string, any> | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<InputNumberPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:modelValue'": "void",
+      "'value-change'": "void",
+      "input": "void",
+      "focus": "void",
+      "blur": "void"
+    },
+    "slots": {}
+  },
+  "inputotp": {
+    "props": {
+      "modelValue": "boolean | string | undefined",
+      "defaultValue": "boolean | string | undefined",
+      "name": "string | undefined",
+      "size": "HintedString<'small' | 'large'> | undefined",
+      "invalid": "boolean | undefined",
+      "disabled": "boolean | undefined",
+      "readonly": "boolean | undefined",
+      "variant": "HintedString<'outlined' | 'filled'> | undefined | null",
+      "tabindex": "number | undefined",
+      "length": "number | undefined",
+      "mask": "boolean | undefined",
+      "integerOnly": "boolean | undefined",
+      "formControl": "Record<string, any> | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<InputOtpPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:modelValue'": "void",
+      "'value-change'": "void",
+      "change": "void",
+      "focus": "void",
+      "blur": "void"
+    },
+    "slots": {}
+  },
+  "inputswitch": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "inputtext": {
+    "props": {
+      "modelValue": "Nullable<string>",
+      "defaultValue": "Nullable<string>",
+      "name": "string | undefined",
+      "size": "HintedString<'small' | 'large'> | undefined | null",
+      "invalid": "boolean | undefined | null",
+      "variant": "HintedString<'outlined' | 'filled'> | undefined | null",
+      "fluid": "boolean | undefined | null",
+      "formControl": "Record<string, any> | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<InputTextPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:modelValue'": "void",
+      "'value-change'": "void"
+    },
+    "slots": {}
+  },
+  "keyfilter": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "knob": {
+    "props": {
+      "modelValue": "number | undefined",
+      "defaultValue": "any",
+      "name": "string | undefined",
+      "size": "number | undefined",
+      "invalid": "boolean | undefined",
+      "disabled": "boolean | undefined",
+      "readonly": "boolean | undefined",
+      "step": "number | undefined",
+      "min": "number | undefined",
+      "max": "number | undefined",
+      "valueColor": "string | undefined",
+      "rangeColor": "string | undefined",
+      "textColor": "string | undefined",
+      "strokeWidth": "number | undefined",
+      "showValue": "boolean | undefined",
+      "valueTemplate": "((val: number) => string) | string | undefined",
+      "tabindex": "number | undefined",
+      "ariaLabelledby": "string | undefined",
+      "ariaLabel": "string | undefined",
+      "formControl": "Record<string, any> | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<KnobPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:modelValue'": "void",
+      "'value-change'": "void",
+      "change": "void"
+    },
+    "slots": {}
+  },
+  "listbox": {
+    "props": {
+      "modelValue": "any",
+      "defaultValue": "any",
+      "name": "string | undefined",
+      "options": "any[] | undefined",
+      "optionLabel": "string | ((data: any) => string) | undefined",
+      "optionValue": "string | ((data: any) => any) | undefined",
+      "optionDisabled": "string | ((data: any) => boolean) | undefined",
+      "optionGroupLabel": "string | ((data: any) => string) | undefined",
+      "optionGroupChildren": "string | ((data: any) => any[]) | undefined",
+      "listStyle": "string | undefined",
+      "scrollHeight": "string | undefined",
+      "invalid": "boolean | undefined",
+      "disabled": "boolean | undefined",
+      "fluid": "boolean | undefined",
+      "dataKey": "string | undefined",
+      "multiple": "boolean | undefined",
+      "metaKeySelection": "boolean | undefined",
+      "filter": "boolean | undefined",
+      "filterPlaceholder": "string | undefined",
+      "filterLocale": "string | undefined",
+      "filterMatchMode": "HintedString<'contains' | 'startsWith' | 'endsWith'> | undefined",
+      "filterFields": "string[] | undefined",
+      "virtualScrollerOptions": "VirtualScrollerProps",
+      "autoOptionFocus": "boolean | undefined",
+      "selectOnFocus": "boolean | undefined",
+      "focusOnHover": "boolean | undefined",
+      "highlightOnSelect": "boolean | undefined",
+      "checkmark": "boolean | undefined",
+      "filterMessage": "string | undefined",
+      "selectionMessage": "string | undefined",
+      "emptySelectionMessage": "string | undefined",
+      "emptyFilterMessage": "string | undefined",
+      "emptyMessage": "string | undefined",
+      "striped": "boolean | undefined",
+      "tabindex": "number | string | undefined",
+      "filterIcon": "string | undefined",
+      "ariaLabel": "string | undefined",
+      "ariaLabelledby": "string | undefined",
+      "formControl": "Record<string, any> | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<ListboxPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:modelValue'": "void",
+      "'value-change'": "void",
+      "change": "void",
+      "focus": "void",
+      "blur": "void",
+      "filter": "void",
+      "'item-dblclick'": "void",
+      "'option-dblclick'": "void"
+    },
+    "slots": {}
+  },
+  "megamenu": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "menu": {
+    "props": {
+      "model": "MenuItem[] | undefined",
+      "popup": "boolean | undefined",
+      "appendTo": "HintedString<'body' | 'self'> | undefined | HTMLElement",
+      "autoZIndex": "boolean | undefined",
+      "baseZIndex": "number | undefined",
+      "tabindex": "number | string | undefined",
+      "ariaLabel": "string | undefined",
+      "ariaLabelledby": "string | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<MenuPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "focus": "void",
+      "blur": "void",
+      "show": "void",
+      "hide": "void"
+    },
+    "slots": {}
+  },
+  "menubar": {
+    "props": {
+      "model": "MenuItem[] | undefined",
+      "breakpoint": "string | undefined",
+      "buttonProps": "ButtonHTMLAttributes | undefined",
+      "ariaLabel": "string | undefined",
+      "ariaLabelledby": "string | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<MenubarPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "menuitem": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "message": {
+    "props": {
+      "severity": "HintedString<'success' | 'info' | 'warn' | 'error' | 'secondary' | 'contrast'> | undefined",
+      "closable": "boolean | undefined",
+      "sticky": "boolean | undefined",
+      "life": "number | undefined",
+      "icon": "string | undefined",
+      "closeIcon": "string | undefined",
+      "closeButtonProps": "ButtonHTMLAttributes | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<MessagePassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean",
+      "size": "HintedString<'small' | 'large'> | undefined",
+      "variant": "HintedString<'outlined' | 'simple'> | undefined"
+    },
+    "emits": {
+      "close": "void",
+      "'life-end'": "void"
+    },
+    "slots": {}
+  },
+  "metergroup": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "multiselect": {
+    "props": {
+      "modelValue": "any",
+      "defaultValue": "any",
+      "name": "string | undefined",
+      "options": "any[] | undefined",
+      "optionLabel": "string | ((data: any) => string) | undefined",
+      "optionValue": "string | ((data: any) => any) | undefined",
+      "optionDisabled": "string | ((data: any) => boolean) | undefined",
+      "optionGroupLabel": "string | ((data: any) => string) | undefined",
+      "optionGroupChildren": "string | ((data: any) => any[]) | undefined",
+      "scrollHeight": "string | undefined",
+      "placeholder": "string | undefined",
+      "size": "HintedString<'small' | 'large'> | undefined",
+      "invalid": "boolean | undefined",
+      "disabled": "boolean | undefined",
+      "variant": "HintedString<'outlined' | 'filled'> | undefined | null",
+      "fluid": "boolean | undefined",
+      "inputId": "string | undefined",
+      "panelStyle": "any",
+      "panelClass": "any",
+      "overlayStyle": "any",
+      "overlayClass": "any",
+      "dataKey": "string | undefined",
+      "showClear": "boolean | undefined",
+      "clearIcon": "string | undefined",
+      "resetFilterOnClear": "boolean",
+      "filter": "boolean | undefined",
+      "filterPlaceholder": "string | undefined",
+      "filterLocale": "string | undefined",
+      "filterMatchMode": "HintedString<'contains' | 'startsWith' | 'endsWith'> | undefined",
+      "filterFields": "string[] | undefined",
+      "appendTo": "HintedString<'body' | 'self'> | undefined | HTMLElement",
+      "display": "HintedString<'comma' | 'chip'> | undefined",
+      "selectedItemsLabel": "string | undefined",
+      "maxSelectedLabels": "number | undefined",
+      "selectionLimit": "number | undefined",
+      "showToggleAll": "boolean | undefined",
+      "loading": "boolean | undefined",
+      "checkboxIcon": "string | undefined",
+      "dropdownIcon": "string | undefined",
+      "filterIcon": "string | undefined",
+      "loadingIcon": "string | undefined",
+      "removeTokenIcon": "string | undefined",
+      "chipIcon": "string | undefined",
+      "selectAll": "boolean | undefined",
+      "resetFilterOnHide": "boolean | undefined",
+      "virtualScrollerOptions": "VirtualScrollerProps",
+      "autoOptionFocus": "boolean | undefined",
+      "autoFilterFocus": "boolean | undefined",
+      "focusOnHover": "boolean | undefined",
+      "highlightOnSelect": "boolean | undefined",
+      "filterMessage": "string | undefined",
+      "selectionMessage": "string | undefined",
+      "emptySelectionMessage": "string | undefined",
+      "emptyFilterMessage": "string | undefined",
+      "emptyMessage": "string | undefined",
+      "tabindex": "number | string | undefined",
+      "ariaLabel": "string | undefined",
+      "ariaLabelledby": "string | undefined",
+      "formControl": "Record<string, any> | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<MultiSelectPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:modelValue'": "void",
+      "'value-change'": "void",
+      "change": "void",
+      "focus": "void",
+      "blur": "void",
+      "'before-show'": "void",
+      "'before-hide'": "void",
+      "show": "void",
+      "hide": "void",
+      "filter": "void",
+      "'selectall-change'": "void"
+    },
+    "slots": {}
+  },
+  "orderlist": {
+    "props": {
+      "modelValue": "any[]",
+      "dataKey": "string | undefined",
+      "selection": "any[]",
+      "metaKeySelection": "boolean | undefined",
+      "autoOptionFocus": "boolean | undefined",
+      "focusOnHover": "boolean | undefined",
+      "listStyle": "any",
+      "responsive": "boolean | undefined",
+      "breakpoint": "string | undefined",
+      "striped": "boolean | undefined",
+      "tabindex": "number | string | undefined",
+      "scrollHeight": "string | undefined",
+      "buttonProps": "object | undefined",
+      "moveUpButtonProps": "object | undefined",
+      "moveTopButtonProps": "object | undefined",
+      "moveDownButtonProps": "object | undefined",
+      "moveBottomButtonProps": "object | undefined",
+      "ariaLabel": "string | undefined",
+      "ariaLabelledby": "string | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<OrderListPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:modelValue'": "void",
+      "'update:selection'": "void",
+      "reorder": "void",
+      "'selection-change'": "void"
+    },
+    "slots": {}
+  },
+  "organizationchart": {
+    "props": {
+      "value": "OrganizationChartNode",
+      "selectionKeys": "OrganizationChartSelectionKeys",
+      "selectionMode": "HintedString<'single' | 'multiple'> | undefined",
+      "collapsedKeys": "OrganizationChartCollapsedKeys",
+      "collapsible": "boolean",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<OrganizationChartPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:selectionKeys'": "void",
+      "'update:collapsedKeys'": "void",
+      "'node-select'": "void",
+      "'node-unselect'": "void",
+      "'node-expand'": "void",
+      "'node-collapsed'": "void"
+    },
+    "slots": {}
+  },
+  "overlaybadge": {
+    "props": {
+      "value": "string | number",
+      "severity": "HintedString<'secondary' | 'info' | 'success' | 'warn' | 'danger' | 'contrast'> | null | undefined",
+      "size": "HintedString<'small' | 'large' | 'xlarge'> | null | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<OverlayBadgePassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "overlaypanel": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "paginator": {
+    "props": {
+      "totalRecords": "number | undefined",
+      "rows": "number | undefined",
+      "first": "number | undefined",
+      "pageLinkSize": "number | undefined",
+      "rowsPerPageOptions": "number[] | undefined",
+      "template": "any | string",
+      "currentPageReportTemplate": "string | undefined",
+      "alwaysShow": "boolean | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<PaginatorPassThroughOptions>",
+      "ptOptions": "PassThroughOptions"
+    },
+    "emits": {
+      "'update:first'": "void",
+      "'update:rows'": "void",
+      "page": "void"
+    },
+    "slots": {}
+  },
+  "panel": {
+    "props": {
+      "header": "string",
+      "toggleable": "boolean",
+      "collapsed": "boolean",
+      "toggleButtonProps": "object | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<PanelPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:collapsed'": "void",
+      "toggle": "void"
+    },
+    "slots": {}
+  },
+  "panelmenu": {
+    "props": {
+      "model": "MenuItem[] | undefined",
+      "expandedKeys": "PanelMenuExpandedKeys",
+      "multiple": "boolean | undefined",
+      "tabindex": "number | string | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<PanelMenuPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:expandedKeys'": "void",
+      "'panel-open'": "void",
+      "'panel-close'": "void"
+    },
+    "slots": {}
+  },
+  "passthrough": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "password": {
+    "props": {
+      "modelValue": "Nullable<string>",
+      "defaultValue": "Nullable<string>",
+      "name": "string | undefined",
+      "promptLabel": "string | undefined",
+      "mediumRegex": "string | RegExp | undefined",
+      "strongRegex": "string | RegExp | undefined",
+      "weakLabel": "string | undefined",
+      "mediumLabel": "string | undefined",
+      "strongLabel": "string | undefined",
+      "feedback": "boolean | undefined",
+      "appendTo": "HintedString<'body' | 'self'> | undefined | HTMLElement",
+      "toggleMask": "boolean | undefined",
+      "maskIcon": "string | undefined",
+      "unmaskIcon": "string | undefined",
+      "showClear": "boolean | undefined",
+      "size": "HintedString<'small' | 'large'> | undefined",
+      "invalid": "boolean | undefined",
+      "disabled": "boolean | undefined",
+      "variant": "HintedString<'outlined' | 'filled'> | undefined | null",
+      "placeholder": "string | undefined",
+      "required": "boolean | undefined",
+      "fluid": "boolean | undefined",
+      "autofocus": "boolean | undefined",
+      "inputId": "string | undefined",
+      "inputStyle": "object | undefined",
+      "inputClass": "string | object | undefined",
+      "inputProps": "InputHTMLAttributes | undefined",
+      "panelId": "string | undefined",
+      "panelClass": "string | object | undefined",
+      "panelStyle": "object | undefined",
+      "panelProps": "HTMLAttributes | undefined",
+      "overlayId": "string | undefined",
+      "overlayClass": "string | object | undefined",
+      "overlayStyle": "object | undefined",
+      "overlayProps": "HTMLAttributes | undefined",
+      "ariaLabelledby": "string | undefined",
+      "ariaLabel": "string | undefined",
+      "formControl": "Record<string, any> | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<PasswordPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:modelValue'": "void",
+      "'value-change'": "void",
+      "change": "void"
+    },
+    "slots": {}
+  },
+  "picklist": {
+    "props": {
+      "modelValue": "any[][] | undefined",
+      "selection": "any[][] | undefined",
+      "dataKey": "string | undefined",
+      "metaKeySelection": "boolean | undefined",
+      "autoOptionFocus": "boolean | undefined",
+      "focusOnHover": "boolean | undefined",
+      "listStyle": "any | undefined",
+      "responsive": "boolean | undefined",
+      "breakpoint": "string | undefined",
+      "scrollHeight": "string | undefined",
+      "striped": "boolean | undefined",
+      "showSourceControls": "boolean | undefined",
+      "showTargetControls": "boolean | undefined",
+      "buttonProps": "object | undefined",
+      "moveUpButtonProps": "object | undefined",
+      "moveTopButtonProps": "object | undefined",
+      "moveDownButtonProps": "object | undefined",
+      "moveBottomButtonProps": "object | undefined",
+      "moveToTargetProps": "object | undefined",
+      "moveAllToTargetProps": "object | undefined",
+      "moveToSourceProps": "object | undefined",
+      "moveAllToSourceProps": "object | undefined",
+      "tabindex": "number | string | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<PickListPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:modelValue'": "void",
+      "'update:selection'": "void",
+      "reorder": "void",
+      "'selection-change'": "void",
+      "'move-to-target'": "void",
+      "'move-all-to-target'": "void",
+      "'move-to-source'": "void",
+      "'move-all-to-source'": "void"
+    },
+    "slots": {}
+  },
+  "popover": {
+    "props": {
+      "dismissable": "boolean",
+      "appendTo": "HintedString<'body' | 'self'> | undefined | HTMLElement",
+      "baseZIndex": "number",
+      "autoZIndex": "boolean",
+      "breakpoints": "PopoverBreakpoints",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<PopoverPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean",
+      "closeOnEscape": "boolean | undefined"
+    },
+    "emits": {
+      "show": "void",
+      "hide": "void"
+    },
+    "slots": {}
+  },
+  "portal": {
+    "props": {
+      "appendTo": "PortalAppendToType",
+      "disabled": "boolean | undefined"
+    },
+    "emits": {},
+    "slots": {
+      "default": "() => VNode[]"
+    }
+  },
+  "progressbar": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "progressspinner": {
+    "props": {
+      "strokeWidth": "string | undefined",
+      "fill": "string | undefined",
+      "animationDuration": "string | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<ProgressSpinnerPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "radiobutton": {
+    "props": {
+      "value": "any",
+      "modelValue": "any",
+      "defaultValue": "any",
+      "name": "string | undefined",
+      "binary": "boolean",
+      "size": "HintedString<'small' | 'large'> | undefined",
+      "invalid": "boolean | undefined",
+      "disabled": "boolean | undefined",
+      "variant": "HintedString<'outlined' | 'filled'> | undefined | null",
+      "readonly": "boolean | undefined",
+      "tabindex": "number | undefined",
+      "inputId": "string | undefined",
+      "inputStyle": "object | undefined",
+      "inputClass": "string | object | undefined",
+      "ariaLabelledby": "string | undefined",
+      "ariaLabel": "string | undefined",
+      "formControl": "Record<string, any> | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<RadioButtonPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:modelValue'": "void",
+      "'value-change'": "void",
+      "change": "void",
+      "focus": "void",
+      "blur": "void"
+    },
+    "slots": {}
+  },
+  "radiobuttongroup": {
+    "props": {
+      "modelValue": "any",
+      "defaultValue": "any",
+      "name": "string | undefined",
+      "invalid": "boolean | undefined",
+      "formControl": "any",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<RadioButtonGroupPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:modelValue'": "void",
+      "'value-change'": "void"
+    },
+    "slots": {
+      "default": "() => VNode[]"
+    }
+  },
+  "rating": {
+    "props": {
+      "modelValue": "number | undefined",
+      "defaultValue": "number | undefined",
+      "name": "string | undefined",
+      "invalid": "boolean | undefined",
+      "disabled": "boolean | undefined",
+      "readonly": "boolean | undefined",
+      "stars": "number | undefined",
+      "onIcon": "string | undefined",
+      "offIcon": "string | undefined",
+      "formControl": "Record<string, any> | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<RatingPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:modelValue'": "void",
+      "'value-change'": "void",
+      "change": "void",
+      "focus": "void",
+      "blur": "void"
+    },
+    "slots": {}
+  },
+  "ripple": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "row": {
+    "props": {
+      "unstyled": "boolean",
+      "pt": "PassThrough<RowPassThroughOptions<any>>"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "scrollpanel": {
+    "props": {
+      "step": "number | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<ScrollPanelPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {
+      "default": "() => VNode[]"
+    }
+  },
+  "scrolltop": {
+    "props": {
+      "target": "HintedString<'window' | 'parent'> | undefined",
+      "threshold": "number | undefined",
+      "icon": "string | undefined",
+      "behavior": "string | undefined",
+      "buttonProps": "object | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<ScrollTopPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "select": {
+    "props": {
+      "modelValue": "any",
+      "defaultValue": "any",
+      "name": "string | undefined",
+      "options": "any[]",
+      "optionLabel": "string | ((data: any) => string) | undefined",
+      "optionValue": "string | ((data: any) => any) | undefined",
+      "optionDisabled": "string | ((data: any) => boolean) | undefined",
+      "optionGroupLabel": "string | ((data: any) => string) | undefined",
+      "optionGroupChildren": "string | ((data: any) => any[]) | undefined",
+      "scrollHeight": "string | undefined",
+      "filter": "boolean | undefined",
+      "filterPlaceholder": "string | undefined",
+      "filterLocale": "string | undefined",
+      "filterMatchMode": "HintedString<'contains' | 'startsWith' | 'endsWith'> | undefined",
+      "filterFields": "string[] | undefined",
+      "editable": "boolean | undefined",
+      "placeholder": "string | undefined",
+      "size": "HintedString<'small' | 'large'> | undefined",
+      "invalid": "boolean | undefined",
+      "disabled": "boolean | undefined",
+      "variant": "HintedString<'outlined' | 'filled'> | undefined | null",
+      "dataKey": "string | undefined",
+      "showClear": "boolean | undefined",
+      "fluid": "boolean | undefined",
+      "inputId": "string | undefined",
+      "inputStyle": "object | undefined",
+      "inputClass": "string | object | undefined",
+      "labelId": "string | undefined",
+      "labelStyle": "object | undefined",
+      "labelClass": "string | object | undefined",
+      "panelStyle": "object | undefined",
+      "panelClass": "string | object | undefined",
+      "overlayStyle": "object | undefined",
+      "overlayClass": "string | object | undefined",
+      "appendTo": "HintedString<'body' | 'self'> | undefined | HTMLElement",
+      "loading": "boolean | undefined",
+      "clearIcon": "string | undefined",
+      "dropdownIcon": "string | undefined",
+      "filterIcon": "string | undefined",
+      "loadingIcon": "string | undefined",
+      "resetFilterOnHide": "boolean",
+      "resetFilterOnClear": "boolean",
+      "virtualScrollerOptions": "VirtualScrollerProps",
+      "autoOptionFocus": "boolean | undefined",
+      "autoFilterFocus": "boolean | undefined",
+      "selectOnFocus": "boolean | undefined",
+      "focusOnHover": "boolean | undefined",
+      "highlightOnSelect": "boolean | undefined",
+      "checkmark": "boolean | undefined",
+      "filterMessage": "string | undefined",
+      "selectionMessage": "string | undefined",
+      "emptySelectionMessage": "string | undefined",
+      "emptyFilterMessage": "string | undefined",
+      "emptyMessage": "string | undefined",
+      "tabindex": "number | string | undefined",
+      "ariaLabel": "string | undefined",
+      "ariaLabelledby": "string | undefined",
+      "formControl": "Record<string, any> | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<SelectPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:modelValue'": "void",
+      "'value-change'": "void",
+      "change": "void",
+      "focus": "void",
+      "blur": "void",
+      "'before-show'": "void",
+      "'before-hide'": "void",
+      "show": "void",
+      "hide": "void",
+      "filter": "void"
+    },
+    "slots": {}
+  },
+  "selectbutton": {
+    "props": {
+      "modelValue": "any",
+      "defaultValue": "any",
+      "name": "string | undefined",
+      "options": "any[] | undefined",
+      "optionLabel": "string | ((data: any) => string) | undefined",
+      "optionValue": "string | ((data: any) => any) | undefined",
+      "optionDisabled": "string | ((data: any) => boolean) | undefined",
+      "multiple": "boolean | undefined",
+      "invalid": "boolean | undefined",
+      "disabled": "boolean | undefined",
+      "fluid": "boolean | undefined",
+      "dataKey": "string | undefined",
+      "allowEmpty": "boolean | undefined",
+      "ariaLabelledby": "string | undefined",
+      "size": "HintedString<'small' | 'large'> | undefined",
+      "formControl": "Record<string, any> | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<SelectButtonPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:modelValue'": "void",
+      "'value-change'": "void",
+      "change": "void",
+      "focus": "void",
+      "blur": "void"
+    },
+    "slots": {}
+  },
+  "sidebar": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "skeleton": {
+    "props": {
+      "shape": "HintedString<'rectangle' | 'circle'> | undefined",
+      "size": "string | undefined",
+      "width": "string | undefined",
+      "height": "string | undefined",
+      "borderRadius": "string | undefined",
+      "animation": "HintedString<'wave' | 'none'> | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<SkeletonPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "slider": {
+    "props": {
+      "modelValue": "number | number[] | undefined",
+      "defaultValue": "number | number[] | undefined",
+      "name": "string | undefined",
+      "min": "number | undefined",
+      "max": "number | undefined",
+      "orientation": "HintedString<'horizontal' | 'vertical'> | undefined",
+      "step": "number | undefined",
+      "range": "boolean | undefined",
+      "invalid": "boolean | undefined",
+      "disabled": "boolean | undefined",
+      "tabindex": "number | undefined",
+      "ariaLabelledby": "string | undefined",
+      "ariaLabel": "string | undefined",
+      "formControl": "Record<string, any> | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<SliderPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:modelValue'": "void",
+      "'value-change'": "void",
+      "change": "void",
+      "slideend": "void"
+    },
+    "slots": {}
+  },
+  "speeddial": {
+    "props": {
+      "model": "MenuItem[] | undefined",
+      "visible": "boolean | undefined",
+      "direction": "HintedString<'up' | 'down' | 'left' | 'right' | 'up-left' | 'up-right' | 'down-left' | 'down-right'> | undefined",
+      "transitionDelay": "number | undefined",
+      "type": "HintedString<'linear' | 'circle' | 'semi-circle' | 'quarter-circle'> | undefined",
+      "radius": "number | undefined",
+      "mask": "boolean | undefined",
+      "disabled": "boolean | undefined",
+      "hideOnClickOutside": "boolean | undefined",
+      "buttonClass": "any",
+      "maskStyle": "any",
+      "maskClass": "string | undefined",
+      "showIcon": "string | undefined",
+      "hideIcon": "string | undefined",
+      "rotateAnimation": "boolean | undefined",
+      "class": "any",
+      "style": "any",
+      "tooltipOptions": "SpeedDialTooltipOptions",
+      "buttonProps": "object | undefined",
+      "actionButtonProps": "object | undefined",
+      "ariaLabel": "string | undefined",
+      "ariaLabelledby": "string | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<SpeedDialPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "click": "void",
+      "show": "void",
+      "hide": "void",
+      "focus": "void",
+      "blur": "void"
+    },
+    "slots": {}
+  },
+  "splitbutton": {
+    "props": {
+      "label": "string | undefined",
+      "icon": "string | undefined",
+      "model": "MenuItem[] | undefined",
+      "autoZIndex": "boolean | undefined",
+      "baseZIndex": "number | undefined",
+      "appendTo": "HintedString<'body' | 'self'> | undefined | HTMLElement",
+      "disabled": "boolean | undefined",
+      "fluid": "boolean | undefined",
+      "class": "any | undefined",
+      "style": "any | undefined",
+      "buttonProps": "ButtonHTMLAttributes | undefined",
+      "menuButtonProps": "ButtonHTMLAttributes | undefined",
+      "menuButtonIcon": "string | undefined",
+      "dropdownIcon": "string | undefined",
+      "severity": "HintedString<'secondary' | 'success' | 'info' | 'warn' | 'help' | 'danger' | 'contrast'> | undefined",
+      "raised": "boolean | undefined",
+      "rounded": "boolean | undefined",
+      "text": "boolean | undefined",
+      "outlined": "boolean | undefined",
+      "size": "HintedString<'small' | 'large'> | undefined",
+      "plain": "boolean | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<SplitButtonPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "click": "void"
+    },
+    "slots": {}
+  },
+  "splitter": {
+    "props": {
+      "layout": "HintedString<'horizontal' | 'vertical'> | undefined",
+      "gutterSize": "number | undefined",
+      "stateKey": "string | undefined",
+      "stateStorage": "HintedString<'local' | 'session'> | undefined",
+      "step": "number | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<SplitterPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "resizestart": "void",
+      "resize": "void",
+      "resizeend": "void"
+    },
+    "slots": {}
+  },
+  "splitterpanel": {
+    "props": {
+      "size": "number | undefined",
+      "minSize": "number | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<SplitterPanelPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {
+      "default": "() => VNode[]"
+    }
+  },
+  "step": {
+    "props": {
+      "value": "string | number | undefined",
+      "disabled": "boolean | undefined",
+      "as": "string | Component | undefined",
+      "asChild": "boolean | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<StepPassThroughOptions>",
+      "ptOptions": "PassThroughOptions"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "stepitem": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "steplist": {
+    "props": {
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<StepListPassThroughOptions>",
+      "ptOptions": "PassThroughOptions"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "steppanel": {
+    "props": {
+      "value": "string | number | undefined",
+      "as": "string | Component | undefined",
+      "asChild": "boolean | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<StepPanelPassThroughOptions>",
+      "ptOptions": "PassThroughOptions"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "steppanels": {
+    "props": {
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<StepPanelsPassThroughOptions>",
+      "ptOptions": "PassThroughOptions"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "stepper": {
+    "props": {
+      "value": "string | number | undefined",
+      "linear": "boolean | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<StepperPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:value'": "void"
+    },
+    "slots": {}
+  },
+  "steps": {
+    "props": {
+      "id": "string | undefined",
+      "model": "MenuItem[] | undefined",
+      "readonly": "boolean | undefined",
+      "activeStep": "number | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<StepsPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "styleclass": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "tab": {
+    "props": {
+      "value": "string | number",
+      "disabled": "boolean | undefined",
+      "as": "string | Component | undefined",
+      "asChild": "boolean | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<TabPassThroughOptions>",
+      "ptOptions": "PassThroughOptions"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "tablist": {
+    "props": {
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<TabListPassThroughOptions>",
+      "ptOptions": "PassThroughOptions"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "tabmenu": {
+    "props": {
+      "model": "MenuItem[] | undefined",
+      "activeIndex": "number | undefined",
+      "ariaLabel": "string | undefined",
+      "ariaLabelledby": "string | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<TabMenuPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'tab-change'": "void"
+    },
+    "slots": {}
+  },
+  "tabpanel": {
+    "props": {
+      "value": "string | number",
+      "as": "string | Component | undefined",
+      "asChild": "boolean | undefined",
+      "header": "string | undefined",
+      "headerStyle": "any",
+      "headerClass": "any",
+      "headerProps": "LiHTMLAttributes | undefined",
+      "headerActionProps": "AnchorHTMLAttributes | undefined",
+      "contentStyle": "any",
+      "contentClass": "any",
+      "contentProps": "HTMLAttributes | undefined",
+      "disabled": "boolean | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<TabPanelPassThroughOptions>",
+      "ptOptions": "PassThroughOptions"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "tabpanels": {
+    "props": {
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<TabPanelsPassThroughOptions>",
+      "ptOptions": "PassThroughOptions"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "tabs": {
+    "props": {
+      "value": "string | number",
+      "lazy": "boolean | undefined",
+      "scrollable": "boolean | undefined",
+      "showNavigators": "boolean | undefined",
+      "tabindex": "number | undefined",
+      "selectOnFocus": "boolean | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<TabsPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:value'": "void"
+    },
+    "slots": {}
+  },
+  "tabview": {
+    "props": {
+      "activeIndex": "number | undefined",
+      "lazy": "boolean | undefined",
+      "scrollable": "boolean | undefined",
+      "tabindex": "number | undefined",
+      "selectOnFocus": "boolean | undefined",
+      "prevButtonProps": "ButtonHTMLAttributes | undefined",
+      "nextButtonProps": "ButtonHTMLAttributes | undefined",
+      "prevIcon": "string | undefined",
+      "nextIcon": "string | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<TabViewPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:activeIndex'": "void",
+      "'tab-change'": "void",
+      "'tab-click'": "void"
+    },
+    "slots": {}
+  },
+  "tag": {
+    "props": {
+      "value": "any",
+      "severity": "HintedString<'secondary' | 'success' | 'info' | 'warn' | 'danger' | 'contrast'> | undefined",
+      "rounded": "boolean | undefined",
+      "icon": "string | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<TagPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "terminal": {
+    "props": {
+      "welcomeMessage": "string | undefined",
+      "prompt": "string | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<TerminalPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "terminalservice": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "textarea": {
+    "props": {
+      "modelValue": "Nullable<string>",
+      "defaultValue": "Nullable<string>",
+      "name": "string | undefined",
+      "autoResize": "boolean | undefined",
+      "size": "HintedString<'small' | 'large'> | undefined",
+      "invalid": "boolean | undefined",
+      "variant": "HintedString<'outlined' | 'filled'> | undefined | null",
+      "fluid": "boolean | undefined",
+      "formControl": "Record<string, any> | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<TextareaPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:modelValue'": "(value: string) => void",
+      "'value-change'": "void"
+    },
+    "slots": {}
+  },
+  "tieredmenu": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "timeline": {
+    "props": {
+      "value": "any[] | undefined",
+      "align": "HintedString<'left' | 'right' | 'alternate' | 'top' | 'bottom'> | undefined",
+      "layout": "HintedString<'vertical' | 'horizontal'> | undefined",
+      "dataKey": "string | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<TimelinePassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "toast": {
+    "props": {
+      "group": "string | undefined",
+      "position": "'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right' | 'center' | undefined",
+      "autoZIndex": "boolean | undefined",
+      "baseZIndex": "number | undefined",
+      "breakpoints": "ToastBreakpointsType",
+      "closeIcon": "string | undefined",
+      "infoIcon": "string | undefined",
+      "warnIcon": "string | undefined",
+      "errorIcon": "string | undefined",
+      "successIcon": "string | undefined",
+      "closeButtonProps": "ButtonHTMLAttributes | undefined",
+      "message": "ToastMessageOptions",
+      "onMouseEnter": "Function | undefined",
+      "onMouseLeave": "Function | undefined",
+      "onClick": "Function | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<ToastPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "close": "void",
+      "'life-end'": "void"
+    },
+    "slots": {}
+  },
+  "toastservice": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "togglebutton": {
+    "props": {
+      "modelValue": "boolean | undefined",
+      "defaultValue": "boolean | undefined",
+      "name": "string | undefined",
+      "onIcon": "string | undefined",
+      "offIcon": "string | undefined",
+      "onLabel": "string | undefined",
+      "offLabel": "string | undefined",
+      "invalid": "boolean | undefined",
+      "disabled": "boolean | undefined",
+      "fluid": "boolean | undefined",
+      "readonly": "boolean | undefined",
+      "tabindex": "string | undefined",
+      "ariaLabelledby": "string | undefined",
+      "size": "HintedString<'small' | 'large'> | undefined",
+      "formControl": "Record<string, any> | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<ToggleButtonPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:modelValue'": "void",
+      "'value-change'": "void",
+      "change": "void",
+      "focus": "void",
+      "blur": "void"
+    },
+    "slots": {}
+  },
+  "toggleswitch": {
+    "props": {
+      "modelValue": "boolean | string | undefined",
+      "defaultValue": "boolean | string | undefined",
+      "name": "string | undefined",
+      "trueValue": "any",
+      "falseValue": "any",
+      "invalid": "boolean | undefined",
+      "disabled": "boolean | undefined",
+      "readonly": "boolean | undefined",
+      "tabindex": "number | undefined",
+      "inputId": "string | undefined",
+      "inputClass": "string | object | undefined",
+      "inputStyle": "object | undefined",
+      "ariaLabelledby": "string | undefined",
+      "ariaLabel": "string | undefined",
+      "formControl": "Record<string, any> | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<ToggleSwitchPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:modelValue'": "void",
+      "'value-change'": "void",
+      "change": "void",
+      "focus": "void",
+      "blur": "void"
+    },
+    "slots": {}
+  },
+  "toolbar": {
+    "props": {
+      "ariaLabelledby": "string | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<ToolbarPassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {},
+    "slots": {}
+  },
+  "tooltip": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "tree": {
+    "props": {
+      "value": "TreeNode[] | undefined",
+      "expandedKeys": "TreeExpandedKeys",
+      "selectionKeys": "TreeSelectionKeys",
+      "selectionMode": "HintedString<'single' | 'multiple' | 'checkbox'> | undefined",
+      "metaKeySelection": "boolean | undefined",
+      "loading": "boolean | undefined",
+      "loadingIcon": "string | undefined",
+      "loadingMode": "HintedString<'mask' | 'icon'> | undefined",
+      "filter": "boolean | undefined",
+      "filterBy": "string | ((node: TreeNode) => string) | undefined",
+      "filterMode": "HintedString<'lenient' | 'strict'> | undefined",
+      "filterPlaceholder": "string | undefined",
+      "filterLocale": "string | undefined",
+      "highlightOnSelect": "boolean | undefined",
+      "scrollHeight": "HintedString<'flex'> | undefined",
+      "draggableNodes": "boolean | undefined",
+      "droppableNodes": "boolean | undefined",
+      "draggableScope": "string | string[] | undefined",
+      "droppableScope": "string | string[] | undefined",
+      "validateDrop": "boolean | undefined",
+      "ariaLabel": "string | undefined",
+      "ariaLabelledby": "string | undefined",
+      "dt": "DesignToken<any>",
+      "pt": "PassThrough<TreePassThroughOptions>",
+      "ptOptions": "PassThroughOptions",
+      "unstyled": "boolean"
+    },
+    "emits": {
+      "'update:value'": "void",
+      "'update:expandedKeys'": "void",
+      "'update:selectionKeys'": "void",
+      "'node-select'": "void",
+      "'node-unselect'": "void",
+      "'node-expand'": "void",
+      "'node-collapse'": "void",
+      "'node-drop'": "void",
+      "'node-dragenter'": "void",
+      "'node-dragleave'": "void",
+      "'filter'": "void",
+      "'drag-enter'": "void",
+      "'drag-leave'": "void"
+    },
+    "slots": {}
+  },
+  "treenode": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "treeselect": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "treetable": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "useconfirm": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "usedialog": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "usestyle": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "usetoast": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "utils": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  },
+  "virtualscroller": {
+    "props": {},
+    "emits": {},
+    "slots": {}
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/checkboxgroup/index.ts"],"sourcesContent":["export const style = /*css*/ `\n    .p-checkbox-group {\n        display: inline-flex;\n    }\n`;\n"],"mappings":";AAAO,IAAM;AAAA;AAAA,EAAgB;AAAA;AAAA;AAAA;AAAA;AAAA;","names":[]}

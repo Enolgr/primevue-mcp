@@ -1,0 +1,2 @@
+function g(){let r=[],i=(e,n,t=999)=>{let s=u(e,n,t),o=s.value+(s.key===e?0:t)+1;return r.push({key:e,value:o}),o},d=e=>{r=r.filter(n=>n.value!==e)},a=(e,n)=>u(e,n).value,u=(e,n,t=0)=>[...r].reverse().find(s=>n?!0:s.key===e)||{key:e,value:t},l=e=>e&&parseInt(e.style.zIndex,10)||0;return{get:l,set:(e,n,t)=>{n&&(n.style.zIndex=String(i(e,!0,t)))},clear:e=>{e&&(d(l(e)),e.style.zIndex="")},getCurrent:e=>a(e,!0)}}var x=g();export{x as ZIndex};
+//# sourceMappingURL=index.mjs.map

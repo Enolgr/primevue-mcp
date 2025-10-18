@@ -1,0 +1,2 @@
+function s(){let r=new Map;return{on(e,t){let n=r.get(e);return n?n.push(t):n=[t],r.set(e,n),this},off(e,t){let n=r.get(e);return n&&n.splice(n.indexOf(t)>>>0,1),this},emit(e,t){let n=r.get(e);n&&n.forEach(i=>{i(t)})},clear(){r.clear()}}}export{s as EventBus};
+//# sourceMappingURL=index.mjs.map

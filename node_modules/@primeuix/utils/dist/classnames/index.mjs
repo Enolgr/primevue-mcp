@@ -1,0 +1,2 @@
+function f(...e){if(e){let t=[];for(let i=0;i<e.length;i++){let n=e[i];if(!n)continue;let s=typeof n;if(s==="string"||s==="number")t.push(n);else if(s==="object"){let c=Array.isArray(n)?[f(...n)]:Object.entries(n).map(([r,o])=>o?r:void 0);t=c.length?t.concat(c.filter(r=>!!r)):t}}return t.join(" ").trim()}}function u(...e){return f(...e)}export{u as classNames,f as cn};
+//# sourceMappingURL=index.mjs.map

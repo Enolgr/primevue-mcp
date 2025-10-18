@@ -29,6 +29,17 @@ function getDataset() {
 }
 
 /**
+ * Health check endpoint for Fly.io
+ */
+app.get("/health", (_, res: Response) => {
+  res.status(200).json({ 
+    status: "ok", 
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime()
+  });
+});
+
+/**
  * Root info
  */
 app.get("/", (_, res: Response) => {

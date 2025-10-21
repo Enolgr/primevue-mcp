@@ -1,57 +1,47 @@
-# PrimeVue MCP Server
+# 🧩 PrimeVue MCP Server
 
-Model Context Protocol server for PrimeVue components and design tokens.
+Model Context Protocol (MCP) server providing structured access to **PrimeVue components** and **design tokens** — including props, examples, and metadata for AI and developer tools.
 
-## Features
+[![Add to Cursor](https://img.shields.io/badge/Add%20to-Cursor-blue?logo=cursor)](cursor://add-mcp?url=https://primevue-mcp-1.onrender.com)
+[![Live API](https://img.shields.io/badge/Open-Live%20API-green)](https://primevue-mcp-1.onrender.com)
+[![License](https://img.shields.io/badge/License-MIT-lightgrey)](./LICENSE)
 
-- **Resources**: Access to all PrimeVue components and design tokens
-- **Tools**: Search, query, and explore PrimeVue components
-- **Real-time**: Live access to component props, examples, and documentation
+---
 
-## Available Tools
+## 🚀 Features
 
-- `search_components` - Search components by name, title, or description
-- `get_component` - Get detailed information about a specific component
-- `search_tokens` - Search design tokens
-- `list_components` - List all available components with stats
+- 🔍 **Query**: Search, filter, and explore PrimeVue components  
+- 🧱 **Resources**: Access structured component metadata and design tokens  
+- ⚡️ **Tools**: Retrieve props, examples, and documentation  
+- 🌐 **Public API**: Available online and via local STDIO
 
-## Usage
+---
 
-### Start MCP Server
-```bash
-npm run mcp
-```
+## 🧩 Available Tools
 
-### Extract Data
-```bash
-npm run extract:all
-```
+| Tool | Description |
+|------|--------------|
+| `search_components` | Search components by name, title, or description |
+| `get_component` | Get detailed information about a specific component |
+| `search_tokens` | Search design tokens |
+| `list_components` | List all available components with stats |
 
-## MCP Configuration
+---
 
-Add to your MCP client configuration:
+## ⚙️ Usage
 
+### 🧠 Add to Cursor (Recommended)
+Click below to connect this MCP directly to Cursor:
+
+👉 [**Add PrimeVue MCP to Cursor**](cursor://add-mcp?url=https://primevue-mcp-1.onrender.com)
+
+Or configure it manually in your `.well-known/mcp.json`:
 ```json
 {
-  "mcpServers": {
-    "primevue": {
-      "command": "npm",
-      "args": ["run", "mcp"],
-      "cwd": "/path/to/primevue-mcp"
+  "servers": [
+    {
+      "type": "http",
+      "url": "https://primevue-mcp-1.onrender.com"
     }
-  }
+  ]
 }
-```
-
-## Development
-
-```bash
-# Install dependencies
-npm install
-
-# Extract PrimeVue data
-npm run extract:all
-
-# Start MCP server
-npm run mcp
-```

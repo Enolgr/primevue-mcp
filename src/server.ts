@@ -31,7 +31,8 @@ function getDataset() {
 /**
  * Health check endpoint for Fly.io
  */
-app.get("/health", (_, res: Response) => {
+app.get("/health", (_: Request, res: Response) => {
+  console.log("Health check endpoint called");
   res.status(200).json({ 
     status: "ok", 
     timestamp: new Date().toISOString(),
@@ -39,14 +40,14 @@ app.get("/health", (_, res: Response) => {
   });
 });
 
+app.get("/test", (_: Request, res: Response) => {
+  res.json({ message: "Test endpoint works" });
+});
+
 /**
  * Root info
  */
-app.get("/", (_, res: Response) => {
-  const data = getDataset();
-  const componentCount = Object.keys(data).filter(key => key !== "_tokens").length;
-  const tokenCount = data["_tokens"] ? Object.keys(data["_tokens"]).length : 0;
-  
+app.get("/", (_: Request, res: Response) => {
   res.json({
     name: "PrimeVue MCP API",
     version: "1.0.0",
@@ -56,12 +57,7 @@ app.get("/", (_, res: Response) => {
       "/mcp/component/:name", 
       "/mcp/tokens",
       "/mcp/search"
-    ],
-    stats: {
-      components: componentCount,
-      tokens: tokenCount,
-      total: componentCount + tokenCount
-    }
+    ]
   });
 });
 

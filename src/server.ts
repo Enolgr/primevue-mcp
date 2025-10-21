@@ -19,7 +19,7 @@ function getDataset() {
     try {
       const file = fs.readFileSync(DATA_PATH, "utf8");
       dataset = JSON.parse(file);
-      console.log(`✅ Loaded ${Object.keys(dataset).length} components from combined.json`);
+      console.error(`✅ Loaded ${Object.keys(dataset).length} components from combined.json`);
     } catch (err) {
       console.error("❌ Failed to load combined.json:", err);
       throw err;
@@ -31,7 +31,8 @@ function getDataset() {
 /**
  * Health check endpoint for Fly.io
  */
-app.get("/health", (_, res: Response) => {
+app.get("/health", (_: Request, res: Response) => {
+  console.error("Health check endpoint called");
   res.status(200).json({ 
     status: "ok", 
     timestamp: new Date().toISOString(),
@@ -39,14 +40,14 @@ app.get("/health", (_, res: Response) => {
   });
 });
 
+app.get("/test", (_: Request, res: Response) => {
+  res.json({ message: "Test endpoint works" });
+});
+
 /**
  * Root info
  */
-app.get("/", (_, res: Response) => {
-  const data = getDataset();
-  const componentCount = Object.keys(data).filter(key => key !== "_tokens").length;
-  const tokenCount = data["_tokens"] ? Object.keys(data["_tokens"]).length : 0;
-  
+app.get("/", (_: Request, res: Response) => {
   res.json({
     name: "PrimeVue MCP API",
     version: "1.0.0",
@@ -56,12 +57,7 @@ app.get("/", (_, res: Response) => {
       "/mcp/component/:name", 
       "/mcp/tokens",
       "/mcp/search"
-    ],
-    stats: {
-      components: componentCount,
-      tokens: tokenCount,
-      total: componentCount + tokenCount
-    }
+    ]
   });
 });
 
@@ -239,8 +235,8 @@ app.get("/mcp/search", (req: Request, res: Response) => {
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`🌐 PrimeVue MCP running on http://localhost:${PORT}`);
-  console.log(`📚 API Documentation: http://localhost:${PORT}/`);
-  console.log(`🔍 Search: http://localhost:${PORT}/mcp/search?q=button`);
-  console.log(`⚡ Dataset will be loaded on first request (lazy loading)`);
+  console.error(`🌐 PrimeVue MCP running on http://localhost:${PORT}`);
+  console.error(`📚 API Documentation: http://localhost:${PORT}/`);
+  console.error(`🔍 Search: http://localhost:${PORT}/mcp/search?q=button`);
+  console.error(`⚡ Dataset will be loaded on first request (lazy loading)`);
 });

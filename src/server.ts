@@ -19,7 +19,7 @@ function getDataset() {
     try {
       const file = fs.readFileSync(DATA_PATH, "utf8");
       dataset = JSON.parse(file);
-      console.error(`✅ Loaded ${Object.keys(dataset).length} components from combined.json`);
+      console.log(`✅ Loaded ${Object.keys(dataset).length} components from combined.json`);
     } catch (err) {
       console.error("❌ Failed to load combined.json:", err);
       throw err;
@@ -32,7 +32,7 @@ function getDataset() {
  * Health check endpoint for Fly.io
  */
 app.get("/health", (_: Request, res: Response) => {
-  console.error("Health check endpoint called");
+  console.log("Health check endpoint called");
   res.status(200).json({ 
     status: "ok", 
     timestamp: new Date().toISOString(),
@@ -235,8 +235,8 @@ app.get("/mcp/search", (req: Request, res: Response) => {
 
 // Start server
 app.listen(PORT, () => {
-  console.error(`🌐 PrimeVue MCP running on http://localhost:${PORT}`);
-  console.error(`📚 API Documentation: http://localhost:${PORT}/`);
-  console.error(`🔍 Search: http://localhost:${PORT}/mcp/search?q=button`);
-  console.error(`⚡ Dataset will be loaded on first request (lazy loading)`);
+  console.log(`🌐 PrimeVue MCP running on http://localhost:${PORT}`);
+  console.log(`📚 API Documentation: http://localhost:${PORT}/`);
+  console.log(`🔍 Search: http://localhost:${PORT}/mcp/search?q=button`);
+  console.log(`⚡ Dataset will be loaded on first request (lazy loading)`);
 });

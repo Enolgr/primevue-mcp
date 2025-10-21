@@ -33,7 +33,7 @@ Model Context Protocol (MCP) server providing structured access to **PrimeVue co
 ### 🧠 Add to Cursor (Recommended)
 Click below to connect this MCP directly to Cursor:
 
-👉 [**Add PrimeVue MCP to Cursor**](cursor://add-mcp?url=https://primevue-mcp-1.onrender.com)
+👉 [**Add PrimeVue MCP to Cursor**](https://cursor.sh/add-mcp?url=https://primevue-mcp-1.enol.dev)
 
 Or configure it manually in your `.well-known/mcp.json`:
 ```json

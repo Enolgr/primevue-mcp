@@ -1,0 +1,11 @@
+{
+  "name": "PrimeVue MCP",
+  "description": "Unofficial Model Context Protocol server for PrimeVue components and tokens.",
+  "servers": [
+    {
+      "type": "stdio",
+      "command": "npm",
+      "args": ["run", "mcp"]
+    }
+  ]
+}

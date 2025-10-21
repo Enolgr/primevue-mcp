@@ -2,21 +2,27 @@
   "name": "primevue-mcp",
   "version": "1.0.0",
   "description": "Unofficial MCP for PrimeVue",
-  "main": "index.js",
+  "main": "src/mcp-server.ts",
+  "type": "module",
   "scripts": {
-    "dev": "tsx src/server.ts",
-    "start": "node --loader tsx src/server.ts",
+    "dev": "tsx src/mcp-server.ts",
+    "start": "node --loader tsx src/mcp-server.ts",
+    "mcp": "tsx src/mcp-server.ts",
     "extract:api": "tsx scripts/extract_api.ts",
     "extract:logic": "tsx scripts/extract_logic.ts",
     "extract:tokens": "tsx scripts/extract_tokens.ts",
     "extract:docs": "tsx scripts/extract_docs.ts",
     "extract:build": "tsx scripts/merge_datasets.ts",
-    "extract:all": "npm run extract:api && npm run extract:logic && npm run extract:tokens && npm run extract:docs && npm run extract:build"
+    "extract:all": "npm run extract:api && npm run extract:logic && npm run extract:tokens && npm run extract:docs && npm run extract:build",
+    "build": "tsc"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  "keywords": ["primevue", "mcp", "ai", "model-context-protocol"],
+  "author": "Enol González",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/enolgr/primevue-mcp"
+  },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.20.1",
     "cheerio": "^1.1.2",

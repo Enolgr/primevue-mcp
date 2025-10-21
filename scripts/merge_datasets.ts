@@ -64,7 +64,6 @@ function mergeDatasets(): Record<string, ComponentData> {
     };
   }
 
-  // Tokens se añaden de forma global (no por componente)
   if (Object.keys(tokens).length > 0) {
     merged["_tokens"] = tokens;
   }

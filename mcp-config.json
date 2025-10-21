@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "primevue": {
+      "command": "npm",
+      "args": ["run", "mcp"],
+      "cwd": "/Users/enol/Desktop/primevue-mcp"
+    }
+  }
+}

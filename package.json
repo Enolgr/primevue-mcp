@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "tsx src/mcp-server.ts",
-    "start": "node --loader tsx src/server.ts",
+    "start": "tsx src/server.ts",
     "mcp": "tsx src/mcp-server.ts",
     "extract:api": "tsx scripts/extract_api.ts",
     "extract:logic": "tsx scripts/extract_logic.ts",

@@ -107,7 +107,7 @@ app.get("/mcp/component/:name", (req: Request, res: Response) => {
     if (!comp) {
       return res.status(404).json({ 
         error: `Component '${name}' not found`,
-        available: Object.keys(data).filter(key => key !== "_tokens").slice(0, 10)
+        available: Object.keys(data).filter(key => key !== "_tokens")
       });
     }
 
@@ -173,7 +173,27 @@ app.get("/mcp/search", (req: Request, res: Response) => {
     const { q } = req.query;
     
     if (!q || typeof q !== "string") {
-      return res.status(400).json({ error: "Query parameter 'q' is required" });
+      return res.status(400).json({ 
+        error: "Query parameter 'q' is required",
+        message: "The search endpoint requires a 'q' query parameter with your search term",
+        usage: {
+          method: "GET",
+          url: "/mcp/search",
+          required_parameter: "q",
+          format: "?q=your_search_term"
+        },
+        examples: [
+          "/mcp/search?q=button",
+          "/mcp/search?q=form",
+          "/mcp/search?q=color",
+          "/mcp/search?q=disabled"
+        ],
+        what_it_searches: {
+          components: ["name", "title", "description", "props"],
+          tokens: ["name", "value"]
+        },
+        note: "The search is case-insensitive and returns both components and design tokens that match your query"
+      });
     }
 
     const term = q.toLowerCase();

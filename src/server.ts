@@ -2,6 +2,22 @@ import express, { Request, Response } from "express";
 import fs from "fs";
 import path from "path";
 import cors from "cors";
+import { 
+  ComponentQuerySchema, 
+  ComponentParamsSchema, 
+  ComponentSectionQuerySchema,
+  TokensQuerySchema,
+  SearchQuerySchema,
+  validateQuery,
+  validateParams,
+  SearchResult
+} from "./validation.js";
+import { 
+  ComponentListRequest, 
+  ComponentDetailRequest, 
+  TokensRequest, 
+  SearchRequest 
+} from "./types.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -13,6 +29,44 @@ app.use(express.json());
 
 // Lazy load combined dataset
 let dataset: Record<string, any> = {};
+
+// Cache system for frequently accessed data
+const cache = {
+  components: new Map<string, any[]>(),
+  tokens: new Map<string, any>(),
+  search: new Map<string, any>(),
+  // Cache TTL in milliseconds (5 minutes)
+  ttl: 5 * 60 * 1000,
+  timestamps: new Map<string, number>()
+};
+
+// Helper function to check if cache entry is valid
+function isCacheValid(key: string): boolean {
+  const timestamp = cache.timestamps.get(key);
+  if (!timestamp) return false;
+  return Date.now() - timestamp < cache.ttl;
+}
+
+// Helper function to set cache with timestamp
+function setCache(cacheMap: Map<string, any>, key: string, value: any): void {
+  cacheMap.set(key, value);
+  cache.timestamps.set(key, Date.now());
+}
+
+// Helper function to get cache or compute
+function getCachedOrCompute<T>(
+  cacheMap: Map<string, T>, 
+  key: string, 
+  computeFn: () => T
+): T {
+  if (cacheMap.has(key) && isCacheValid(key)) {
+    return cacheMap.get(key)!;
+  }
+  
+  const result = computeFn();
+  setCache(cacheMap, key, result);
+  return result;
+}
 
 function getDataset() {
   if (Object.keys(dataset).length === 0) {
@@ -45,6 +99,42 @@ app.get("/test", (_: Request, res: Response) => {
 });
 
 /**
+ * Cache management endpoints
+ */
+app.get("/cache/stats", (_: Request, res: Response) => {
+  const stats = {
+    components: {
+      size: cache.components.size,
+      keys: Array.from(cache.components.keys())
+    },
+    tokens: {
+      size: cache.tokens.size,
+      keys: Array.from(cache.tokens.keys())
+    },
+    search: {
+      size: cache.search.size,
+      keys: Array.from(cache.search.keys())
+    },
+    ttl: cache.ttl,
+    totalEntries: cache.components.size + cache.tokens.size + cache.search.size
+  };
+  
+  res.json(stats);
+});
+
+app.post("/cache/clear", (_: Request, res: Response) => {
+  cache.components.clear();
+  cache.tokens.clear();
+  cache.search.clear();
+  cache.timestamps.clear();
+  
+  res.json({ 
+    message: "Cache cleared successfully",
+    timestamp: new Date().toISOString()
+  });
+});
+
+/**
  * Root info
  */
 app.get("/", (_: Request, res: Response) => {
@@ -56,7 +146,9 @@ app.get("/", (_: Request, res: Response) => {
       "/mcp/components",
       "/mcp/component/:name", 
       "/mcp/tokens",
-      "/mcp/search"
+      "/mcp/search",
+      "/cache/stats",
+      "/cache/clear"
     ]
   });
 });
@@ -64,31 +156,50 @@ app.get("/", (_: Request, res: Response) => {
 /**
  * List all components or filter by query
  */
-app.get("/mcp/components", (req: Request, res: Response) => {
+app.get("/mcp/components", validateQuery(ComponentQuerySchema), (req: ComponentListRequest, res: Response) => {
   try {
     const data = getDataset();
-    const { q } = req.query;
-    let keys = Object.keys(data).filter((key) => key !== "_tokens");
+    const { q } = req.validatedQuery;
+    
+    // Create cache key based on query
+    const cacheKey = q ? `components:${q}` : "components:all";
+    
+    const result = getCachedOrCompute(cache.components, cacheKey, () => {
+      let keys = Object.keys(data).filter((key) => key !== "_tokens");
 
-    if (q && typeof q === "string") {
-      const term = q.toLowerCase();
-      keys = keys.filter((key) => {
+      if (q && typeof q === "string") {
+        const term = q.toLowerCase();
+        keys = keys.filter((key) => {
+          const component = data[key];
+          return (
+            key.toLowerCase().includes(term) ||
+            component?.title?.toLowerCase().includes(term) ||
+            component?.description?.toLowerCase().includes(term)
+          );
+        });
+      }
+
+      return keys.map((key) => {
         const component = data[key];
-        return (
-          key.toLowerCase().includes(term) ||
-          component?.title?.toLowerCase().includes(term) ||
-          component?.description?.toLowerCase().includes(term)
+        const standardSections = ["title", "description", "props", "examples"];
+        const sections = Object.keys(component || {}).filter(k => 
+          !standardSections.includes(k) && 
+          typeof component[k] === 'object' && 
+          component[k] !== null
         );
+        
+        return {
+          name: key,
+          title: component?.title,
+          description: component?.description,
+          hasProps: !!component?.props,
+          hasExamples: !!component?.examples?.length,
+          sections
+        };
       });
-    }
+    });
 
-    res.json(keys.map((key) => ({
-      name: key,
-      title: data[key]?.title,
-      description: data[key]?.description,
-      hasProps: !!data[key]?.props,
-      hasExamples: !!data[key]?.examples?.length
-    })));
+    res.json(result);
   } catch (error) {
     res.status(500).json({ error: "Internal server error" });
   }
@@ -97,11 +208,14 @@ app.get("/mcp/components", (req: Request, res: Response) => {
 /**
  * Get one component by name (optionally a specific section)
  */
-app.get("/mcp/component/:name", (req: Request, res: Response) => {
+app.get("/mcp/component/:name", 
+  validateParams(ComponentParamsSchema), 
+  validateQuery(ComponentSectionQuerySchema), 
+  (req: ComponentDetailRequest, res: Response) => {
   try {
     const data = getDataset();
-    const { name } = req.params;
-    const { section } = req.query;
+    const { name } = req.validatedParams;
+    const { section } = req.validatedQuery;
 
     const comp = data[name.toLowerCase()] || data[name];
     if (!comp) {
@@ -135,30 +249,38 @@ app.get("/mcp/component/:name", (req: Request, res: Response) => {
 /**
  * Get global design tokens
  */
-app.get("/mcp/tokens", (req: Request, res: Response) => {
+app.get("/mcp/tokens", validateQuery(TokensQuerySchema), (req: TokensRequest, res: Response) => {
   try {
     const data = getDataset();
-    const { q } = req.query;
-    let tokens = data["_tokens"] || {};
+    const { q } = req.validatedQuery;
+    
+    // Create cache key based on query
+    const cacheKey = q ? `tokens:${q}` : "tokens:all";
+    
+    const result = getCachedOrCompute(cache.tokens, cacheKey, () => {
+      let tokens = data["_tokens"] || {};
 
-    if (q && typeof q === "string") {
-      const term = q.toLowerCase();
-      const filteredTokens: Record<string, string> = {};
-      
-      Object.entries(tokens).forEach(([key, value]) => {
-        if (key.toLowerCase().includes(term) || 
-            (typeof value === 'string' && value.toLowerCase().includes(term))) {
-          filteredTokens[key] = value as string;
-        }
-      });
-      
-      tokens = filteredTokens;
-    }
+      if (q && typeof q === "string") {
+        const term = q.toLowerCase();
+        const filteredTokens: Record<string, string> = {};
+        
+        Object.entries(tokens).forEach(([key, value]) => {
+          if (key.toLowerCase().includes(term) || 
+              (typeof value === 'string' && value.toLowerCase().includes(term))) {
+            filteredTokens[key] = value as string;
+          }
+        });
+        
+        tokens = filteredTokens;
+      }
 
-    res.json({
-      count: Object.keys(tokens).length,
-      tokens
+      return {
+        count: Object.keys(tokens).length,
+        tokens
+      };
     });
+
+    res.json(result);
   } catch (error) {
     res.status(500).json({ error: "Internal server error" });
   }
@@ -167,87 +289,71 @@ app.get("/mcp/tokens", (req: Request, res: Response) => {
 /**
  * Global search across components and tokens
  */
-app.get("/mcp/search", (req: Request, res: Response) => {
+app.get("/mcp/search", validateQuery(SearchQuerySchema), (req: SearchRequest, res: Response) => {
   try {
     const data = getDataset();
-    const { q } = req.query;
+    const { q } = req.validatedQuery;
     
-    if (!q || typeof q !== "string") {
-      return res.status(400).json({ 
-        error: "Query parameter 'q' is required",
-        message: "The search endpoint requires a 'q' query parameter with your search term",
-        usage: {
-          method: "GET",
-          url: "/mcp/search",
-          required_parameter: "q",
-          format: "?q=your_search_term"
-        },
-        examples: [
-          "/mcp/search?q=button",
-          "/mcp/search?q=form",
-          "/mcp/search?q=color",
-          "/mcp/search?q=disabled"
-        ],
-        what_it_searches: {
-          components: ["name", "title", "description", "props"],
-          tokens: ["name", "value"]
-        },
-        note: "The search is case-insensitive and returns both components and design tokens that match your query"
-      });
-    }
+    // Create cache key based on search query
+    const cacheKey = `search:${q}`;
+    
+    const result = getCachedOrCompute(cache.search, cacheKey, () => {
+      // Zod validation ensures q is present and is a string
+      const term = q.toLowerCase();
+      const results: SearchResult[] = [];
 
-    const term = q.toLowerCase();
-    const results: any[] = [];
+      // Search components
+      Object.entries(data).forEach(([key, value]) => {
+        if (key === "_tokens") return;
 
-    // Search components
-    Object.entries(data).forEach(([key, value]) => {
-      if (key === "_tokens") return;
+        const component = value as any;
+        const matches: string[] = [];
 
-      const component = value as any;
-      const matches: string[] = [];
+        if (key.toLowerCase().includes(term)) matches.push("name");
+        if (component?.title?.toLowerCase().includes(term)) matches.push("title");
+        if (component?.description?.toLowerCase().includes(term)) matches.push("description");
+        
+        // Search in props
+        if (component?.props) {
+          Object.keys(component.props).forEach(prop => {
+            if (prop.toLowerCase().includes(term)) matches.push(`prop:${prop}`);
+          });
+        }
 
-      if (key.toLowerCase().includes(term)) matches.push("name");
-      if (component?.title?.toLowerCase().includes(term)) matches.push("title");
-      if (component?.description?.toLowerCase().includes(term)) matches.push("description");
-      
-      // Search in props
-      if (component?.props) {
-        Object.keys(component.props).forEach(prop => {
-          if (prop.toLowerCase().includes(term)) matches.push(`prop:${prop}`);
-        });
-      }
-
-      if (matches.length > 0) {
-        results.push({
-          type: "component",
-          name: key,
-          title: component?.title,
-          description: component?.description,
-          matches
-        });
-      }
-    });
-
-    // Search tokens
-    if (data["_tokens"]) {
-      Object.entries(data["_tokens"]).forEach(([key, value]) => {
-        if (key.toLowerCase().includes(term) || 
-            (typeof value === 'string' && value.toLowerCase().includes(term))) {
+        if (matches.length > 0) {
           results.push({
-            type: "token",
+            type: "component",
             name: key,
-            value: value as string,
-            matches: ["token"]
+            title: component?.title,
+            description: component?.description,
+            matches
           });
         }
       });
-    }
 
-    res.json({
-      query: q,
-      count: results.length,
-      results
+      // Search tokens
+      if (data["_tokens"]) {
+        Object.entries(data["_tokens"]).forEach(([key, value]) => {
+          if (key.toLowerCase().includes(term) || 
+              (typeof value === 'string' && value.toLowerCase().includes(term))) {
+            results.push({
+              type: "token",
+              name: key,
+              value: value as string,
+              matches: ["token"]
+            });
+          }
+        });
+      }
+
+      return {
+        query: q,
+        count: results.length,
+        results
+      };
     });
+
+    res.json(result);
   } catch (error) {
     res.status(500).json({ error: "Internal server error" });
   }
